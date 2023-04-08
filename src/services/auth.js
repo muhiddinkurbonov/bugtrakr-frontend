@@ -33,4 +33,12 @@ const logout = () => {
   document.cookie = "token=; expires=Thu, 01 Jan 1970 00:000:00 UTC; path=/;";
 }
 
-export default {register, login, logout};
+const isAuthenticated = () => {
+  const token = document.cookie.replace(
+    /(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/,
+    "$1"
+  );
+  return token !== "" && token !== null && token !== undefined;
+};
+
+export default {register, login, logout, isAuthenticated};
