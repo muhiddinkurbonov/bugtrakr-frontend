@@ -7,7 +7,7 @@ axios.defaults.headers.common["Content-Type"] = "application/json";
 
 const register = async (name, email, password) => {
   try {
-    const response = await axios.post("/regsiter", { name, email, password });
+    const response = await axios.post("/register", { name, email, password });
     return response.data;
   } catch (error) {
     throw new Error(error.response.data.message);
@@ -17,7 +17,7 @@ const register = async (name, email, password) => {
 const login = async (email, password) => {
   try {
     const response = await axios.post('/login', {email, password});
-    const {accessToken} = response;
+    const {accessToken} = response.data;
     // set token in cookie
     if(accessToken) {
       document.cookie = `token=${accessToken}; path=/`;
