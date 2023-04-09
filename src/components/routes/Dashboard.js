@@ -25,15 +25,38 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Welcome to your Dashboard</h1>
-           <button onClick={handleLogout}>Logout</button>
-      {user && (
-        <div>
-          <h3>User Details:</h3>
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
+      <div className="top-menu">
+        {user ? <h2>Hello, {user.name}!</h2> : ""}
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+      <div className="main-section">
+        <div className="main-container">
+          <h1>Welcome to your Dashboard</h1>
+          <h2>Bug Status</h2>
+          <div className="bug-status-chart">hello</div>
+          <div className="bug-cards">
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+            <div className="bug-card"></div>
+          </div>
         </div>
-      )}
+        <div className="menu-sidebar">
+          {user && (
+            <div className="menu-container">
+              <ul className="menu-list">
+                <li className="menu-item">Dashboard</li>
+                <li className="menu-item">View Bugs</li>
+                <li className="menu-item">Create a new bug</li>
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
