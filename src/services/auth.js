@@ -18,6 +18,7 @@ const login = async (email, password) => {
   try {
     const response = await axios.post('/login', {email, password});
     const {accessToken} = response.data;
+    console.log(response)
     // set token in cookie
     if(accessToken) {
       document.cookie = `token=${accessToken}; path=/`;
@@ -41,4 +42,5 @@ const isAuthenticated = () => {
   return token !== "" && token !== null && token !== undefined;
 };
 
-export default {register, login, logout, isAuthenticated};
+const auth = {register, login, logout, isAuthenticated};
+export default auth;
