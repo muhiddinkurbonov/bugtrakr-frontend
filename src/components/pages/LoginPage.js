@@ -1,19 +1,40 @@
+
+
 export const LoginPage = ({
   email,
   password,
   handleEmailChange,
   handlePasswordChange,
-  handleSubmit
+  handleSubmit,
 }) => (
   <form onSubmit={handleSubmit}>
+    <h1>Login</h1>
     <div>
-      <label>Email:</label>
-      <input type="email" value={email} onChange={handleEmailChange} />
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        value={email}
+        onChange={handleEmailChange}
+        placeholder="Enter your email"
+        required
+      />
     </div>
     <div>
-      <label>Password:</label>
-      <input type="password" value={password} onChange={handlePasswordChange} />
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        value={password}
+        onChange={handlePasswordChange}
+        placeholder="Enter your password"
+        required
+      />
     </div>
     <button type="submit">Login</button>
+    <div className="register-login-now">
+      <p>Need an account? </p>{" "}
+      <a href="http://localhost:3000/api/auth/register">Register Now</a>
+    </div>
   </form>
 );
