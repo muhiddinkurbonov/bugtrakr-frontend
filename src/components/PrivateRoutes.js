@@ -1,13 +1,12 @@
 import React from "react";
-import { Outlet, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import auth from "../services/auth";
 
-const PrivateRoutes = () => {
-  const isAuthenticated = auth.isAuthenticated();
+export const ProtectedRoute = ({ children }) => {
 
-  return (
-    isAuthenticated ? <Outlet /> : <Navigate to="/api/auth/login"/>
-  );
+  if (!auth.isAuthenticated()) {
+    // user is not authenticated
+    return <Navigate to="/api/auth/login" />;
+  }
+  return children;
 };
-
-export default PrivateRoutes;

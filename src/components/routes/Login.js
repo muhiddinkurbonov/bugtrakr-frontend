@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginPage } from "../pages/LoginPage";
 import auth from "../../services/auth";
@@ -7,7 +7,11 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  useEffect(() => {
+    if (auth.isAuthenticated()) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
