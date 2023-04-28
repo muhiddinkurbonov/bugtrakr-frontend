@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/routes/Login";
 import { Logout } from "./components/routes/Logout";
 import { Home } from "./components/routes/Home";
-import {ProtectedRoute} from "./components/PrivateRoutes";
+import {ProtectedRoute} from "./components/ProtectedRoute";
 import Dashboard from "./components/routes/Dashboard";
 import Register from "./components/routes/Register";
 
