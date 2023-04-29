@@ -20,10 +20,12 @@ export default function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const userData = await getUser();
+      console.log(userData)
       setUser(userData);
     };
     if (isLoggedIn) fetchUser();
   }, [isLoggedIn]);
+  
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -60,7 +62,7 @@ export default function App() {
           path="/add"
           element={
             <ProtectedRoute>
-              <AddForm />
+              <AddForm user={user}/>
             </ProtectedRoute>
           }
         />
