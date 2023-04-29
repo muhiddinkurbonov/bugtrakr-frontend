@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BugCard } from "../pages/BugCard";
+import { getBugs } from "../../services/bug";
 
+export const Bugs = (user) => {
+  const [bugs, setBugs] = useState([]);
 
-export const Bugs = () => {
+  useEffect(() => {
+    const getAllBugs = async () => {
+      const allBugs = await getBugs();
+      setBugs(allBugs);
+    };
+    if (user) getAllBugs();
+  }, [user]);
   return (
-    <div>
       <div className="bug-cards">
-        <BugCard />
-        <BugCard />
-        <BugCard />
-        <BugCard />
-        <BugCard />
-        <BugCard />
+        {bugs && bugs.map((bug) => <BugCard key={bug._id} bug={bug} />)}
       </div>
-    </div>
   );
 };

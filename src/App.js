@@ -20,7 +20,6 @@ export default function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const userData = await getUser();
-      console.log(userData)
       setUser(userData);
     };
     if (isLoggedIn) fetchUser();
@@ -54,7 +53,7 @@ export default function App() {
           path="/bugs"
           element={
             <ProtectedRoute>
-              <Bugs />
+              <Bugs user={user} />
             </ProtectedRoute>
           }
         />
@@ -62,7 +61,7 @@ export default function App() {
           path="/add"
           element={
             <ProtectedRoute>
-              <AddForm user={user}/>
+              <AddForm user={user} />
             </ProtectedRoute>
           }
         />
