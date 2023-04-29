@@ -1,17 +1,29 @@
-import React from "react";
-
-export const Navbar = ({user, handleLogout}) => {
+const { Link, NavLink } = require("react-router-dom");
+const Navbar = ({ user }) => {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="left">
-        <h1 id="logo">BugTrakr</h1>
-        <img src="../" alt="" width={"100px"} />
-        <p>hi</p>
+        <Link to="/dashboard" className="link">
+          <h2>BugTrakr</h2>
+        </Link>
+        <NavLink
+          to="/bugs"
+          className="link"
+          style={({ isActive }) => {
+            return isActive ? { color: "orangered" } : {};
+          }}
+        >
+          Bugs
+        </NavLink>
       </div>
+
       <div className="right">
-        <h2>Hello, {user.name}!</h2>
-        <button onClick={handleLogout}>Logout</button>
+        <Link to="/api/auth/logout" className="link">
+          Logout
+        </Link>
+        <p>Hello, {user.name}!</p>
       </div>
-    </div>
+    </nav>
   );
 };
+export default Navbar;
