@@ -84,7 +84,7 @@ button:hover {
   align-items: center;
 }
 .left .link {
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 .right {
   display: flex;
@@ -113,11 +113,27 @@ button:hover {
   padding: 1rem 2rem;
 }
 .bug-card {
-  height: 200px;
-  width: 200px;
-  background-color: #45a049;
+  width: 300px;
+  padding: 0.5rem;
+  background-color: #FDEC8B;
+}
+.bug-card p {
+  margin: 0.4rem 0;
 }
 
+
+p.createdBy, p.createdAt {
+  font-size: 0.8rem;
+}
+p.createdAt {
+  margin-top: 2rem;
+}
+p.bugTitle {
+  margin: 1rem 0;
+}
+span.title {
+  color: red;
+}
 /********************* ADD FORM ***************/
 
 #add-form {
