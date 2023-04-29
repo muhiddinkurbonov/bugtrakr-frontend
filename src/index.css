@@ -68,71 +68,28 @@ button:hover {
     align-items: center;
     gap: 2rem;
     color: #fff;
+    font-size: 1.5rem;
 }
 .left {
   display: flex;
+  gap: 2rem;
   align-items: center;
+}
+.left .link {
+  margin-left: 5rem;
 }
 .right {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-.right button {
-  width: fit-content;
-  background-color: rgb(248, 38, 38);
-  font-size: 1rem;
-  transition: all 0.4s;
-}
-.right button:hover {
-  background-color: rgb(212, 3, 3);
-}
-.menu-sidebar {
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.main-section {
-  display: flex;
+.link {
+  color: #93eefa;
+  text-decoration: none;
 }
-
-.menu-container {
-  right: 0;
-  width: 200px;
-  background-color: #ce5c27;
-}
-
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-item {
-  color: #fff;
-  padding: 20px;
-  border-bottom: 1px solid #fff;
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-.menu-item:hover {
-  background-color: #444;
-  cursor: pointer;
-}
-
-.main-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.main-container h2 {
-text-align: center;
-margin: 1rem;
+.link:hover {
+  color: dodgerblue;
 }
 
 .bug-status-chart {
