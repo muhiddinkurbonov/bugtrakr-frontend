@@ -10,10 +10,19 @@ const Navbar = ({ user }) => {
           to="/bugs"
           className="link"
           style={({ isActive }) => {
-            return isActive ? { color: "orangered" } : {};
+            return isActive ? { color: "gold" } : {};
           }}
         >
           Bugs
+        </NavLink>
+        <NavLink
+          to="/add"
+          className="link"
+          style={({ isActive }) => {
+            return isActive ? { color: "gold" } : {};
+          }}
+        >
+          Add a bug
         </NavLink>
       </div>
 

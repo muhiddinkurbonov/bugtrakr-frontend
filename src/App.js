@@ -12,6 +12,7 @@ import getUser from "./services/user";
 import { useNavigate } from "react-router-dom";
 import auth from "./services/auth";
 import Navbar from "./components/pages/Navbar";
+import { AddForm } from "./components/routes/AddForm";
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -19,10 +20,12 @@ export default function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const userData = await getUser();
+      console.log(userData)
       setUser(userData);
     };
     if (isLoggedIn) fetchUser();
   }, [isLoggedIn]);
+  
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -31,8 +34,8 @@ export default function App() {
   };
 
   return (
-    <>
-      {isLoggedIn? <Navbar user={user}/> : "" }
+    <main>
+      {isLoggedIn ? <Navbar user={user} /> : ""}
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
@@ -55,7 +58,15 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/add"
+          element={
+            <ProtectedRoute>
+              <AddForm user={user}/>
+            </ProtectedRoute>
+          }
+        />
       </Routes>
-    </>
+    </main>
   );
 }

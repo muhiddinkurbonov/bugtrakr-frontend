@@ -6,8 +6,8 @@ export const RegisterPage = ({
   handleSubmit
 }) => {
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='container'>
+      <form onSubmit={handleSubmit} className="login-register">
         <h1>Register</h1>
         <div>
           <label htmlFor="name">Name:</label>

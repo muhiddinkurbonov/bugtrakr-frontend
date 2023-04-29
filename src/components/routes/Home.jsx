@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import PublicNavbar from "../pages/PublicNavbar";
 
 export const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <PublicNavbar />
+      <p>Home</p>
+      <h2>BugTrakr makes issue tracking easier</h2>
+    </>
+  );
+};
