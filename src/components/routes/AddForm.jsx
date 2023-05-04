@@ -82,7 +82,6 @@ export const AddForm = ({user}) => {
           name="assigned"
           value={assigned}
           onChange={handleBugAssigned}
-          required
         />
         <button type="submit">Submit</button>
       </form>
