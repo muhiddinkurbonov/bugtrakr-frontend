@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import auth from "../../services/auth";
 import { RegisterPage } from "../pages/RegisterPage";
@@ -10,6 +10,11 @@ const Register = () => {
     password: "",
   });
 
+  useEffect(() => {
+    if (auth.isAuthenticated()) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export const RegisterPage = ({
   userData,
@@ -6,7 +7,7 @@ export const RegisterPage = ({
   handleSubmit
 }) => {
   return (
-    <div className='container'>
+    <div className="container">
       <form onSubmit={handleSubmit} className="login-register">
         <h1>Register</h1>
         <div>
@@ -45,7 +46,7 @@ export const RegisterPage = ({
         <button type="submit">Register</button>
         <div className="register-login-now">
           <p>Already have an account? </p>
-          <a href="http://localhost:3000/api/auth/login">Login Now</a>
+          <Link to="/api/auth/login">Login Now</Link>
         </div>
       </form>
     </div>

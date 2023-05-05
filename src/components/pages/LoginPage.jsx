@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export const LoginPage = ({
   email,
   password,
@@ -33,7 +35,7 @@ export const LoginPage = ({
       <button type="submit">Login</button>
       <div className="register-login-now">
         <p>Need an account? </p>{" "}
-        <a href="http://localhost:3000/api/auth/register">Register Now</a>
+        <Link to="/api/auth/register">Register Now</Link>
       </div>
     </form>
   </div>
