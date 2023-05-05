@@ -115,24 +115,30 @@ button:hover {
 .bug-card {
   width: 300px;
   padding: 0.5rem;
-  background-color: #FDEC8B;
+  background-color: rgb(90, 210, 231);
 }
 .bug-card p {
   margin: 0.4rem 0;
 }
 
 
-p.createdBy, p.createdAt {
-  font-size: 0.8rem;
-}
-p.createdAt {
-  margin-top: 2rem;
-}
 p.bugTitle {
   margin: 1rem 0;
+  text-align: center;
 }
 span.title {
-  color: red;
+  font-weight: 600;
+  color: rgb(87, 85, 85);
+  font-size: 1.3rem;
+}
+.edit-del {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.icon {
+  width: 2.3rem;
 }
 /********************* ADD FORM ***************/
 
